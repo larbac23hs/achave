@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(45deg, black, green);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: min(320px, 88vw);
+}
+
+input,
+button {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+input {
+  padding: 10px;
+  border: none;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(15, 102, 15);
+}
+
+.error {
+  margin-top: 10px;
+  color: #ffc1c1;
+  font-size: 14px;
+}
+
+.app-wrap {
+  padding: 16px;
+  color: white;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+#consult-result {
+  margin-top: 12px;
+  line-height: 1.7;
+}
