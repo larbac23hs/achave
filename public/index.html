@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projetosenhas</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section id="login-section" class="login-box">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input id="username" name="username" type="text" placeholder="Usuario" required />
+        <input id="password" name="password" type="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="login-error" class="error hidden"></p>
+    </section>
+
+    <section id="app-section" class="hidden app-wrap">
+      <header class="card">
+        <h2>Gerador de Senhas Reais</h2>
+        <p id="user-badge"></p>
+        <button id="logout-btn" type="button">Sair</button>
+      </header>
+
+      <section class="card">
+        <h3>Calculo de Senhas Internas</h3>
+        <form id="consult-form">
+          <input id="client-code" maxlength="4" placeholder="Codigo 4 digitos" required />
+          <button type="submit">Gerar senhas</button>
+        </form>
+        <div id="consult-result"></div>
+      </section>
+    </section>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
