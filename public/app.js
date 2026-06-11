@@ -13,9 +13,9 @@ const FACTORS = {
 };
 
 const clientes = {
-  "1234": { nome: "Cliente Alfa", endereco: "Rua das Flores, 120" },
-  "4321": { nome: "Cliente Beta", endereco: "Av. Central, 450" },
-  "2026": { nome: "Cliente Gama", endereco: "Rua Projetada, 88" }
+  "1234": { nome: "Cliente Alfa", endereco: "Rua das Flores, 120", celular: "(11) 91234-5678" },
+  "4321": { nome: "Cliente Beta", endereco: "Av. Central, 450", celular: "(21) 99876-5432" },
+  "2026": { nome: "Cliente Gama", endereco: "Rua Projetada, 88", celular: "(31) 98765-4321" }
 };
 
 const state = {
@@ -62,7 +62,11 @@ function generatePasswords(code) {
 }
 
 function buscarCliente(code) {
-  return clientes[code] || { nome: `Cliente ${code}`, endereco: `Rua Ficticia, ${code}` };
+  return clientes[code] || {
+    nome: `Cliente ${code}`,
+    endereco: `Rua Ficticia, ${code}`,
+    celular: `(11) 9${code}-0000`
+  };
 }
 
 function doLogin(event) {
@@ -102,7 +106,8 @@ function onConsult(event) {
     el.consultResult.innerHTML = `
       <strong>Codigo:</strong> ${code}<br>
       <strong>Cliente:</strong> ${cliente.nome}<br>
-      <strong>Endereco:</strong> ${cliente.endereco}<br><br>
+      <strong>Endereco:</strong> ${cliente.endereco}<br>
+      <strong>Celular:</strong> ${cliente.celular}<br><br>
       <strong>Senha Tecnica (Tatico):</strong> ${p.tatico}<br><br>
       Instalador: <strong>${p.instalador}</strong><br>
       Painel: <strong>${p.painel}</strong><br>
