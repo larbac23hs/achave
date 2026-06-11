@@ -19,4 +19,4 @@ Abra `public/index.html` no navegador.
 
 ## Observacao
 
-A logica de geracao de senha tecnica no `public/app.js` usa os fatores extraidos da planilha interna.
+A logica de geracao de senha tecnica no `public/app.js` usa os fatores extraidos da planilha interna..
