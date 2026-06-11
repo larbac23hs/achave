@@ -61,6 +61,10 @@ function generatePasswords(code) {
   };
 }
 
+function buscarCliente(code) {
+  return clientes[code] || { nome: `Cliente ${code}`, endereco: `Rua Ficticia, ${code}` };
+}
+
 function doLogin(event) {
   event.preventDefault();
   const username = el.username.value.trim().toLowerCase();
@@ -94,7 +98,7 @@ function onConsult(event) {
   try {
     const code = el.clientCode.value.replace(/\D/g, "");
     const p = generatePasswords(code);
-    const cliente = clientes[code] || { nome: "Cliente nao cadastrado", endereco: "Endereco nao cadastrado" };
+    const cliente = buscarCliente(code);
     el.consultResult.innerHTML = `
       <strong>Codigo:</strong> ${code}<br>
       <strong>Cliente:</strong> ${cliente.nome}<br>
