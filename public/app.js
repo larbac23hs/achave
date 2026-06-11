@@ -12,6 +12,12 @@ const FACTORS = {
   tatico: { d: 15.321, e: 19.123 }
 };
 
+const clientes = {
+  "1234": { nome: "Cliente Alfa", endereco: "Rua das Flores, 120" },
+  "4321": { nome: "Cliente Beta", endereco: "Av. Central, 450" },
+  "2026": { nome: "Cliente Gama", endereco: "Rua Projetada, 88" }
+};
+
 const state = {
   user: null
 };
@@ -86,10 +92,13 @@ function doLogout() {
 function onConsult(event) {
   event.preventDefault();
   try {
-    const code = el.clientCode.value;
+    const code = el.clientCode.value.replace(/\D/g, "");
     const p = generatePasswords(code);
+    const cliente = clientes[code] || { nome: "Cliente nao cadastrado", endereco: "Endereco nao cadastrado" };
     el.consultResult.innerHTML = `
       <strong>Codigo:</strong> ${code}<br>
+      <strong>Cliente:</strong> ${cliente.nome}<br>
+      <strong>Endereco:</strong> ${cliente.endereco}<br><br>
       <strong>Senha Tecnica (Tatico):</strong> ${p.tatico}<br><br>
       Instalador: <strong>${p.instalador}</strong><br>
       Painel: <strong>${p.painel}</strong><br>
